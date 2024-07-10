@@ -1,0 +1,29 @@
+themes {
+ 	aura-dark {
+ 		fg "#edecee"
+        bg "#3d375e"
+        black "#110f18"
+        red "#ff6767"
+        green "#61ffca"
+        yellow "#ffca85"
+        blue "#82e2ff"
+        magenta "#a277ff"
+        cyan "#61ffca"
+        white "#edecee"
+        orange "#ffca85"
+ 	}
+
+ 	aura-dark-soft {
+ 		fg "#bdbdbd"
+        bg "#3d375e"
+ 		black "#4d4d4d"
+        red "#c55858"
+        green "#54c59f"
+        yellow "#ffca85"
+        blue "#6cb2c7"
+        magenta "#a277ff"
+        cyan "#61ffca"
+        white "#bdbdbd"
+        orange "#c7a06f"
+ 	}
+}
