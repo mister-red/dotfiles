@@ -31,7 +31,7 @@ export SAVEHIST=25000
 export HISTCONTROL=ignorespace
 
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
-eval "$(starship init bash)"
+if [ $(which starship) ]; then eval "$(starship init bash)"; fi
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -80,4 +80,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-eval "$(zoxide init bash)"
+
+# ~~~~~~~~~~~~~~~ Zoxide CD ~~~~~~~~~~~~~~~~~~~~~~~~
+if [ $(which zoxide) ]; then eval "$(zoxide init bash)"; fi
