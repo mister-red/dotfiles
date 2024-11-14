@@ -26,6 +26,8 @@ config.font_size = 13.0
 -- For example, changing the color scheme:
 config.color_scheme = "Aura (Gogh)"
 
+config.enable_wayland = false
+
 wezterm.on("gui-startup", function(cmd)
 	local tab, pane, window = mux.spawn_window({
 		workspace = "main",
