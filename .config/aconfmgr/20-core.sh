@@ -1,5 +1,6 @@
 AddPackage base       # Minimal package set to define a basic Arch Linux installation
 AddPackage base-devel # Basic tools to build Arch Linux packages
+AddPackage cmake
 AddPackage efibootmgr # Linux user-space application to modify the EFI Boot Manager
 
 # Intel package should be optional based on host
