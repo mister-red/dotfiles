@@ -8,11 +8,22 @@ tap "homebrew/core"
 # Brews
 brew 'zellij'
 brew 'git'
-brew 'neovim'
 brew 'starship'
 brew 'podman'
+brew 'clipboard'
+
+# Brews -> Neovim
+brew 'neovim'
 brew 'ripgrep'
+brew 'lazygit'
+brew 'rustup'
+brew 'php'
+brew 'composer'
 brew 'fd'
+brew 'ruby'
+brew 'openjdk'
+brew 'julia'
+brew 'python3'
 
 # Casks
 cask 'wezterm'
