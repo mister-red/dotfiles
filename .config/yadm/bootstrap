@@ -17,5 +17,6 @@ if [ "$system_type" = "Darwin" ]; then
 
 else
   echo "Nothing to bootstrap for $(uname -s) system type"
+  # I can add aconfmgr install here if I want
   exit 0
 fi
