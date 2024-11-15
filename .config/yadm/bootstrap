@@ -1,6 +1,12 @@
-#!/bin/sh
+#!/bin/bash
 
 system_type=$(uname -s)
+
+config_neovim() {
+  rustup default stable
+  #npm install neovim # needs to be installed globally
+  #cpanm Neovim::Ext # needs to be installed globally
+}
 
 if [ "$system_type" = "Darwin" ]; then
 
@@ -16,7 +22,7 @@ if [ "$system_type" = "Darwin" ]; then
   fi
 
 else
-  echo "Nothing to bootstrap for $(uname -s) system type"
-  # I can add aconfmgr install here if I want
-  exit 0
+  echo "Nothing to specific to bootstrap for $(uname -s) system type"
 fi
+
+config_neovim
