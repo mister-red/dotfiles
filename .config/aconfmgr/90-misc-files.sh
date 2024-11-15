@@ -44,4 +44,3 @@ CopyFile /etc/tlp.conf
 CopyFile /etc/vconsole.conf
 CreateDir /lost+found 700
 CopyFile /etc/.updated
-CopyFile /etc/ld.so.cache
