@@ -4,6 +4,7 @@ cask_args appdir: "/Applications"
 tap "homebrew/bundle"
 
 # Brews
+brew 'bash'
 brew 'yadm'
 brew 'zellij'
 brew 'git'
