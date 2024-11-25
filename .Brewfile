@@ -11,6 +11,7 @@ brew 'git'
 brew 'starship'
 brew 'podman'
 brew 'clipboard'
+brew 'zoxide'
 
 # Brews -> Neovim
 brew 'neovim'
