@@ -16,11 +16,16 @@ if [ "$system_type" = "Darwin" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
   fi
 
+  # TODO: Enter a step to install latest xcode version: https://www.freecodecamp.org/news/how-to-download-and-install-xcode/
+
   if [ -f "$HOME/.Brewfile" ]; then
     echo "Updating homebrew bundle"
     eval "$(/opt/homebrew/bin/brew shellenv)"
     brew bundle --global
   fi
+
+  # TODO: append updated bash to /etc/shells if it doesn't exist
+  # sudo echo "/opt/homebrew/bin/bash" >> /etc/shells
 
 else
   echo "Nothing to specific to bootstrap for $(uname -s) system type"
