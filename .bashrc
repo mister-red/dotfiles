@@ -9,6 +9,8 @@
 # Set to superior editing mode
 set -o vi
 
+system_type=$(uname -s)
+
 # ~~~~~~~~~~~~~~~ SSH ~~~~~~~~~~~~~~~~~~~~~~~~
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
@@ -83,6 +85,9 @@ fi
 
 # ~~~~~~~~~~~~~~~ Zoxide CD ~~~~~~~~~~~~~~~~~~~~~~~~
 if [ $(which zoxide) ]; then eval "$(zoxide init bash)"; fi
+
+# ~~~~~~~~~~~~~~~ Brew (macOS) ~~~~~~~~~~~~~~~~~~~~~
+if [ "$system_type" = "Darwin" ]; then eval $(/opt/homebrew/bin/brew shellenv); fi
 
 PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"
 export PATH
