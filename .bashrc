@@ -86,8 +86,17 @@ fi
 # ~~~~~~~~~~~~~~~ Zoxide CD ~~~~~~~~~~~~~~~~~~~~~~~~
 if [ $(which zoxide) ]; then eval "$(zoxide init bash)"; fi
 
+# ~~~~~~~~~~~~~~~ Node Version Manager (macOS) ~~~~~
+if [ "$system_type" = "Darwin" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+fi
+
 # ~~~~~~~~~~~~~~~ Brew (macOS) ~~~~~~~~~~~~~~~~~~~~~
 if [ "$system_type" = "Darwin" ]; then eval $(/opt/homebrew/bin/brew shellenv); fi
+
+# ~~~~~~~~~~~~~~~ Python pipx ~~~~~~~~~~~~~~~~~~~~~~
 
 PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"
 export PATH
@@ -99,3 +108,7 @@ PERL_MB_OPT="--install_base \"${HOME}/perl5\""
 export PERL_MB_OPT
 PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"
 export PERL_MM_OPT
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# Created by `pipx` on 2024-12-06 18:04:38
+export PATH="$PATH:/Users/cartyd2/.local/bin"
