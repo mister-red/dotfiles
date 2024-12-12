@@ -18,6 +18,14 @@ if [ "$system_type" = "Darwin" ]; then
 
   # TODO: Enter a step to install latest xcode version: https://www.freecodecamp.org/news/how-to-download-and-install-xcode/
 
+  if ! command -v nvm >/dev/null 2>&1; then
+    nvm_version="v0.40.1"
+    echo "Installing nvm ${nvm_version}"
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/${nvm_version}/install.sh | bash
+    echo "Installing node lts"
+    nvm install --lts
+  fi
+
   if [ -f "$HOME/.Brewfile" ]; then
     echo "Updating homebrew bundle"
     eval "$(/opt/homebrew/bin/brew shellenv)"
