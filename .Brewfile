@@ -8,8 +8,13 @@ tap "FelixKratz/formulae"
 brew 'sketchybar'
 brew 'borders'
 
+# granted - multi account aws helper
+tap "common-fate/granted"
+brew 'granted'
+
 # Brews
 brew 'bash'
+brew 'wget'
 brew 'yadm'
 brew 'zellij'
 brew 'git'
@@ -19,6 +24,8 @@ brew 'clipboard'
 brew 'zoxide'
 brew 'awscli'
 brew 'jq'
+brew 'watch'
+brew 'cfn-lint'
 
 # Brews -> Neovim
 brew 'neovim'
@@ -31,6 +38,7 @@ brew 'fd'
 brew 'ruby'
 brew 'openjdk'
 brew 'julia'
+brew 'fzf'
 
 # Brews -> python3
 brew 'python3'
@@ -53,3 +61,5 @@ cask 'trunk-io'                   # Code Quality tool
 cask 'nikitabobko/tap/aerospace'  # Tiling window manager like i3
 cask 'postman'                    # API Tool
 cask 'raycast'                    # Extendable Launcher
+cask 'drawio'                     # Diagramming tool
+cask 'session-manager-plugin'     # AWS CLI session manager plugin
