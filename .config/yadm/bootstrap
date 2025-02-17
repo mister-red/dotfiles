@@ -2,10 +2,15 @@
 
 system_type=$(uname -s)
 
+config_python() {
+  python3 -m venv ~/pyenv
+}
+
 config_neovim() {
   rustup default stable
-  #npm install neovim # needs to be installed globally
-  #cpanm Neovim::Ext # needs to be installed globally
+  npm install -g neovim
+  cpanm -n Neovim::Ext
+  #python3 -m pip install --upgrade pynvim
 }
 
 if [ "$system_type" = "Darwin" ]; then
@@ -32,6 +37,8 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 
+  sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
   # TODO: append updated bash to /etc/shells if it doesn't exist
   # sudo echo "/opt/homebrew/bin/bash" >> /etc/shells
 
@@ -39,4 +46,5 @@ else
   echo "Nothing to specific to bootstrap for $(uname -s) system type"
 fi
 
+config_python
 config_neovim
