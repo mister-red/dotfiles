@@ -26,6 +26,7 @@ brew 'awscli'
 brew 'jq'
 brew 'watch'
 brew 'cfn-lint'
+brew 'sshpass'
 
 # Brews -> Neovim
 brew 'neovim'
@@ -39,6 +40,12 @@ brew 'ruby'
 brew 'openjdk'
 brew 'julia'
 brew 'fzf'
+brew 'luarocks'
+brew 'perl'
+brew 'cpanminus'
+brew 'go'
+brew 'rust'
+brew 'shellcheck'
 
 # Brews -> python3
 brew 'python3'
