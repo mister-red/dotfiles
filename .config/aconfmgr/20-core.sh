@@ -6,6 +6,7 @@ AddPackage efibootmgr # Linux user-space application to modify the EFI Boot Mana
 # Intel package should be optional based on host
 AddPackage intel-ucode # Microcode update files for Intel CPUs
 
+AddPackage cliphist       # clipboard manager
 AddPackage iwd            # Internet Wireless Daemon
 AddPackage linux          # The Linux kernel and modules
 AddPackage linux-firmware # Firmware files for Linux
@@ -31,7 +32,6 @@ AddPackage --foreign apfs-fuse-git # FUSE driver for APFS (Apple File System)
 AddPackage --foreign apfsprogs-git # Experimental APFS tools for linux
 AddPackage --foreign yay           # Yet another yogurt. Pacman wrapper and AUR helper written in go.
 AddPackage --foreign yay-debug     # Detached debugging symbols for yay
-AddPackage --foreign clipboard     # Cut, copy, and paste anything in your terminal.
 
 # Fonts
 AddPackage ttf-hack-nerd # Patched font Hack from nerd fonts library
