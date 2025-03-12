@@ -15,6 +15,7 @@ AddPackage cpanminus   # get, unpack, build and install modules from CPAN
 AddPackage composer    # Dependency Manager for PHP
 AddPackage jdk-openjdk # OpenJDK Java 23 development kit
 AddPackage julia       # High-level, high-performance, dynamic programming language
+AddPackage thefuck     # The Fuck is a magnificent app, inspired by a @liamosaur tweet, that corrects errors in previous console commands.
 
 # neovim
 AddPackage neovim  # Fork of Vim aiming to improve user experience, plugins, and GUIs
