@@ -110,10 +110,10 @@ PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"
 export PERL_MM_OPT
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-source /Users/cartyd2/.jfrog/jfrog_bash_completion
+source "${HOME}/.jfrog/jfrog_bash_completion"
 
 # Created by `pipx` on 2024-12-06 18:04:38
-export PATH="$PATH:/Users/cartyd2/.local/bin"
+export PATH="$PATH:/Users/${HOME}/.local/bin"
 
 # ~~~~~~~~~~~~~~~ Zoxide CD ~~~~~~~~~~~~~~~~~~~~~~~~
 if [ $(which zoxide) ]; then eval "$(zoxide init bash)"; fi
