@@ -11,7 +11,7 @@ after-login-command = []
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
   'exec-and-forget borders',
-  'exec-and-forget sketchybar'
+  'exec-and-forget sketchybar',
 ]
 
 # Start AeroSpace at login
@@ -39,7 +39,7 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+#on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -47,8 +47,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c',
-    'sketchybar --trigger aerospace_workspace_change FOCUSED=$AEROSPACE_FOCUSED_WORKSPACE'
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
+  'sketchybar --trigger aerospace_workspace_change FOCUSED=$AEROSPACE_FOCUSED_WORKSPACE',
 ]
 
 # Possible values: (qwerty|dvorak)
@@ -65,15 +67,19 @@ preset = 'qwerty'
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 25
-inner.vertical =   25
-outer.left =       25
-outer.bottom =     25
-outer.top =        50
-outer.right =      25
+inner.vertical = 25
+outer.left = 25
+outer.bottom = 25
+outer.top = 50
+outer.right = 25
 
 [workspace-to-monitor-force-assignment]
-1 = ['secondary','main']
-
+1 = ['main', 'secondary']
+2 = ['secondary', 'main']
+3 = ['secondary', 'main']
+4 = ['secondary', 'main']
+5 = ['secondary', 'main']
+6 = ['secondary', 'main']
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
@@ -128,11 +134,11 @@ alt-shift-equal = 'resize smart +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-leftSquareBracket = 'workspace prev --wrap-around'
 alt-rightSquareBracket = 'workspace next --wrap-around'
-alt-1 = 'workspace 1' # chat / email
-alt-2 = 'workspace 2' # calendar / email writing
-alt-3 = 'workspace 3' # browser
-alt-4 = 'workspace 4' # terminal
-alt-5 = 'workspace 5' # misc apps
+alt-1 = 'workspace 1'                                   # chat / email
+alt-2 = 'workspace 2'                                   # calendar / email writing
+alt-3 = 'workspace 3'                                   # browser
+alt-4 = 'workspace 4'                                   # terminal
+alt-5 = 'workspace 5'                                   # misc apps
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
@@ -154,7 +160,10 @@ alt-shift-semicolon = 'mode service'
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
@@ -176,6 +185,11 @@ run = 'move-node-to-workspace 5'
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
 run = 'move-node-to-workspace 4'
+
+# move cursor app
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = ['layout tiling', 'move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-id = 'net.pulsesecure.Pulse-Secure'

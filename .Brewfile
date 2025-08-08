@@ -12,6 +12,10 @@ brew 'borders'
 tap "common-fate/granted"
 brew 'granted'
 
+# packer - fucking hashi
+tap "hashicorp/tap"
+brew "hashicorp/tap/packer"
+
 # Brews
 brew 'bash'
 brew 'wget'
@@ -20,6 +24,7 @@ brew 'zellij'
 brew 'git'
 brew 'starship'
 brew 'podman'
+brew 'podman-compose'
 brew 'clipboard'
 brew 'zoxide'
 brew 'awscli'
@@ -27,6 +32,14 @@ brew 'jq'
 brew 'watch'
 brew 'cfn-lint'
 brew 'sshpass'
+brew 'jfrog-cli'
+brew 'thefuck'
+brew 'yamllint'
+brew 'opentofu'
+brew 'terraform'
+brew 'glab'
+brew 'yq'
+brew 'tree'
 
 # Brews -> Neovim
 brew 'neovim'
@@ -46,10 +59,12 @@ brew 'cpanminus'
 brew 'go'
 brew 'rust'
 brew 'shellcheck'
+brew 'mkdocs'
 
 # Brews -> python3
 brew 'python3'
 brew 'pipx'
+brew 'pyright'
 
 # Casks
 cask 'wezterm'
@@ -70,3 +85,8 @@ cask 'postman'                    # API Tool
 cask 'raycast'                    # Extendable Launcher
 cask 'drawio'                     # Diagramming tool
 cask 'session-manager-plugin'     # AWS CLI session manager plugin
+cask 'th-ch/youtube-music/youtube-music' # Youtube Music
+cask 'cursor'                     # cursor AI IDE
+cask 'wireshark'
+cask 'darktable'
+cask 'devpod'                     # https://devpod.sh

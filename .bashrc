@@ -68,7 +68,7 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
+if [ -f ~/.bash_aliases ]; then # shellcheck disable=SC1090
   . ~/.bash_aliases
 fi
 
@@ -83,8 +83,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ~~~~~~~~~~~~~~~ Zoxide CD ~~~~~~~~~~~~~~~~~~~~~~~~
-if [ $(which zoxide) ]; then eval "$(zoxide init bash)"; fi
+# ~~~~~~~~~~~~~~~ TheFuck ~~~~~~~~~~~~~~~~~~~~~~~~
+if [ "$(which fuck)" ]; then eval "$(thefuck --alias)"; fi
 
 # ~~~~~~~~~~~~~~~ Node Version Manager (macOS) ~~~~~
 if [ "$system_type" = "Darwin" ]; then
@@ -94,7 +94,7 @@ if [ "$system_type" = "Darwin" ]; then
 fi
 
 # ~~~~~~~~~~~~~~~ Brew (macOS) ~~~~~~~~~~~~~~~~~~~~~
-if [ "$system_type" = "Darwin" ]; then eval $(/opt/homebrew/bin/brew shellenv); fi
+if [ "$system_type" = "Darwin" ]; then eval "$(/opt/homebrew/bin/brew shellenv)"; fi
 
 # ~~~~~~~~~~~~~~~ Python pipx ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -110,5 +110,27 @@ PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"
 export PERL_MM_OPT
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
+source /Users/cartyd2/.jfrog/jfrog_bash_completion
+
 # Created by `pipx` on 2024-12-06 18:04:38
 export PATH="$PATH:/Users/cartyd2/.local/bin"
+
+# ~~~~~~~~~~~~~~~ Zoxide CD ~~~~~~~~~~~~~~~~~~~~~~~~
+if [ $(which zoxide) ]; then eval "$(zoxide init bash)"; fi
+
+weznvim() {
+  # 1) Spawn a new *tab* running `nvim .` in your current directory,
+  #    and capture the pane-id that it returns:
+  pane_id=$(wezterm cli spawn --cwd "$PWD" -- nvim .)
+
+  # 2) Split that same pane *down* into a 15%-height bottom shell:
+  wezterm cli split-pane \
+    --pane-id $pane_id \
+    --percent 15 \
+    --cwd "$PWD"
+}
+
+znvim() {
+  # 1) Create a brand-new tab in the current directory, using the built-in “default” layout
+  zellij action new-tab --name "  $(basename "$PWD")" --cwd "$PWD" --layout ~/.config/zellij/layouts/nvim-workspace.kdl
+}

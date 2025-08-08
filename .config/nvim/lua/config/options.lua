@@ -5,3 +5,7 @@ vim.g.python3_host_prog = "~/pyenv/bin/python3"
 
 local opt = vim.opt
 opt.conceallevel = 2
+
+-- LSP Server to use for Python.
+-- Set to "basedpyright" to use basedpyright instead of pyright.
+vim.g.lazyvim_python_lsp = "pyright"
