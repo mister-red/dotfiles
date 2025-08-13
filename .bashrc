@@ -3,6 +3,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Ghostty shell integration for Bash. This should be at the top of your bashrc!
+if [ -n "${GHOSTTY_RESOURCES_DIR}" ]; then
+  builtin source "${GHOSTTY_RESOURCES_DIR}/shell-integration/bash/ghostty.bash"
+fi
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -117,20 +122,3 @@ export PATH="$PATH:/Users/${HOME}/.local/bin"
 
 # ~~~~~~~~~~~~~~~ Zoxide CD ~~~~~~~~~~~~~~~~~~~~~~~~
 if [ $(which zoxide) ]; then eval "$(zoxide init bash)"; fi
-
-weznvim() {
-  # 1) Spawn a new *tab* running `nvim .` in your current directory,
-  #    and capture the pane-id that it returns:
-  pane_id=$(wezterm cli spawn --cwd "$PWD" -- nvim .)
-
-  # 2) Split that same pane *down* into a 15%-height bottom shell:
-  wezterm cli split-pane \
-    --pane-id $pane_id \
-    --percent 15 \
-    --cwd "$PWD"
-}
-
-znvim() {
-  # 1) Create a brand-new tab in the current directory, using the built-in “default” layout
-  zellij action new-tab --name "  $(basename "$PWD")" --cwd "$PWD" --layout ~/.config/zellij/layouts/nvim-workspace.kdl
-}

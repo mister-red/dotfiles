@@ -20,7 +20,6 @@ brew "hashicorp/tap/packer"
 brew 'bash'
 brew 'wget'
 brew 'yadm'
-brew 'zellij'
 brew 'git'
 brew 'starship'
 brew 'podman'
@@ -60,6 +59,8 @@ brew 'go'
 brew 'rust'
 brew 'shellcheck'
 brew 'mkdocs'
+brew 'imagemagick'
+brew 'ghostscript'
 
 # Brews -> python3
 brew 'python3'
@@ -67,7 +68,6 @@ brew 'pipx'
 brew 'pyright'
 
 # Casks
-cask 'wezterm'
 cask 'slack'
 cask 'syncthing'
 cask 'enpass'
@@ -90,3 +90,4 @@ cask 'cursor'                     # cursor AI IDE
 cask 'wireshark'
 cask 'darktable'
 cask 'devpod'                     # https://devpod.sh
+cask 'kitty'                      # terminal emulator
