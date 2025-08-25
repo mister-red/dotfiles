@@ -37,6 +37,10 @@ export HISTSIZE=25000
 export SAVEHIST=25000
 export HISTCONTROL=ignorespace
 
+# Append timestamps and immediate history writing
+export HISTTIMEFORMAT='%F %T '
+export PROMPT_COMMAND='history -a'
+
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
 if [ $(which starship) ]; then eval "$(starship init bash)"; fi
 
