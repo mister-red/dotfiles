@@ -33,7 +33,6 @@ return {
                     "*.cf.yml",
                     "*.cloudformation.yaml",
                     "*.cloudformation.yml",
-                    "*.yml",
                   },
                 },
               },

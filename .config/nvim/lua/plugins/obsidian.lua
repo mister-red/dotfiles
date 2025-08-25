@@ -3,6 +3,13 @@ return {
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
+  keys = {
+    { "<leader>nn", function() require("obsidian").util.toggle_checkbox() end, desc = "Notes: Toggle checkbox", mode = "n" },
+    { "<leader>no", ":ObsidianOpen<cr>", desc = "Notes: Open in Obsidian", mode = "n" },
+    { "<leader>ns", ":ObsidianSearch<cr>", desc = "Notes: Search", mode = "n" },
+    { "<leader>nt", ":ObsidianTags<cr>", desc = "Notes: Tags", mode = "n" },
+    { "<leader>nd", ":ObsidianToday<cr>", desc = "Notes: Daily note", mode = "n" },
+  },
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
   -- event = {
   --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
@@ -15,16 +22,14 @@ return {
     "nvim-lua/plenary.nvim",
     "hrsh7th/nvim-cmp",
     "nvim-telescope/telescope.nvim",
-    "nvim-treesitter",
-    "pomo.nvim",
-
-    -- see below for full list of optional dependencies 👇
+    "nvim-treesitter/nvim-treesitter",
+    "epwalsh/pomo.nvim",
   },
   opts = {
     workspaces = {
       {
         name = "red",
-        path = "~/garden/red",
+        path = vim.fn.expand("~/garden/red"),
       },
     },
     completion = {

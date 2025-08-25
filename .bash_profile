@@ -7,3 +7,8 @@ export PATH="$PATH:/Users/cartyd2/.local/bin"
 # shellcheck source=.bash_aliases
 [[ -r ~/.bash_aliases ]] && . ~/.bash_aliases
 alias assume=". assume"
+
+# Add this to the end of ~/.bash_profile
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi

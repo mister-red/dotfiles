@@ -1,6 +1,12 @@
--- ~/.config/nvim/lua/config/neo-tree.lua
+-- ~/.config/nvim/lua/plugins/neo-tree.lua
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  keys = {
+    { "<leader>fe", false },
+    { "<leader>fE", false },
+    { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer: Toggle" },
+    { "<leader>E", "<cmd>Neotree reveal<cr>", desc = "Explorer: Reveal" },
+  },
   opts = {
     window = {
       width = 30,

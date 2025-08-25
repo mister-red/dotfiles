@@ -21,7 +21,6 @@ brew 'bash'
 brew 'wget'
 brew 'yadm'
 brew 'git'
-brew 'starship'
 brew 'podman'
 brew 'podman-compose'
 brew 'clipboard'
@@ -39,6 +38,12 @@ brew 'terraform'
 brew 'glab'
 brew 'yq'
 brew 'tree'
+brew 'nmap'
+
+# Brews -> shell
+brew 'zsh'
+brew 'starship'
+brew 'fzf'
 
 # Brews -> Neovim
 brew 'neovim'
@@ -51,7 +56,6 @@ brew 'fd'
 brew 'ruby'
 brew 'openjdk'
 brew 'julia'
-brew 'fzf'
 brew 'luarocks'
 brew 'perl'
 brew 'cpanminus'
@@ -61,6 +65,10 @@ brew 'shellcheck'
 brew 'mkdocs'
 brew 'imagemagick'
 brew 'ghostscript'
+brew 'tectonic'
+
+# Mermaid CLI for Snacks image diagrams
+brew 'node'
 
 # Brews -> python3
 brew 'python3'
@@ -87,7 +95,8 @@ cask 'drawio'                     # Diagramming tool
 cask 'session-manager-plugin'     # AWS CLI session manager plugin
 cask 'th-ch/youtube-music/youtube-music' # Youtube Music
 cask 'cursor'                     # cursor AI IDE
+cask 'cursor-cli'
 cask 'wireshark'
 cask 'darktable'
 cask 'devpod'                     # https://devpod.sh
-cask 'kitty'                      # terminal emulator
+cask 'wezterm'                    # terminal emulator
