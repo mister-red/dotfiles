@@ -3,6 +3,9 @@ return {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
+      pyright = {},
+      gopls = {},
+      tsserver = {},
       bashls = {},
       helm_ls = {},
       marksman = {},

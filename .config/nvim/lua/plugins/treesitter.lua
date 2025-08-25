@@ -28,6 +28,10 @@ return {
       "typst",
       "vue",
       "yaml",
+      "lua",
+      "python",
+      "typescript",
+      "tsx",
     },
     highlight = {
       enable = true,

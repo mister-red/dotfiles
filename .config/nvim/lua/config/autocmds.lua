@@ -20,7 +20,26 @@ vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
   callback = function()
     vim.schedule(function()
-      vim.notify("Tip: Press <leader>?k for the keymap cheatsheet or <leader>?p for the fuzzy picker", vim.log.levels.INFO, { title = "Keymaps" })
+      vim.notify(
+        "Tip: Press <leader>?k for the keymap cheatsheet or <leader>?p for the fuzzy picker",
+        vim.log.levels.INFO,
+        { title = "Keymaps" }
+      )
     end)
+  end,
+})
+
+-- Highlight yanked text for a short time
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
+  end,
+})
+
+-- Remove trailing whitespace on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    -- the substitute command with 'e' flag suppresses errors if no match
+    vim.cmd([[%s/\s\+$//e]])
   end,
 })
