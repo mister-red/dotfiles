@@ -3,32 +3,29 @@
 -- Add any additional keymaps here
 
 -- Group labels for which-key to improve discoverability
-do
+local function setup_which_key_groups()
   local ok, wk = pcall(require, "which-key")
-  if ok and wk and wk.register then
-    wk.register({
-      ["<leader>c"] = {
-        name = "+code",
-        d = { name = "+docker" },
-        p = { name = "+python" },
-        y = { name = "+yaml" },
-        t = { name = "+terraform" },
-        j = { name = "+java" },
-      },
-      ["<leader>m"] = { name = "+markdown" },
-      ["<leader>n"] = { name = "+notes" },
-      ["<leader>a"] = { name = "+ai" },
-      ["<leader>t"] = { name = "+toggles" },
-      ["<leader>u"] = { name = "+ui" },
-      ["<leader>f"] = { name = "+file/find" },
-      ["<leader>s"] = { name = "+search" },
-      ["<leader>b"] = { name = "+buffer" },
-      ["<leader>g"] = { name = "+git" },
-      ["<leader>x"] = { name = "+diagnostics" },
-      ["<leader>?"] = { name = "+help" },
+  if not ok then
+    return
+  end
+
+  -- Only add groups that aren't already defined by LazyVim
+  -- and only add our custom groups
+  if wk.add then
+    wk.add({
+      { "<leader>?", group = "help" },
+      { "<leader>cd", group = "docker" },
+      { "<leader>cj", group = "java" },
+      { "<leader>cp", group = "python" },
+      { "<leader>ct", group = "terraform" },
+      { "<leader>cy", group = "yaml" },
+      { "<leader>n", group = "notes" },
     })
   end
 end
+
+-- Defer the setup to avoid conflicts with LazyVim initialization
+vim.defer_fn(setup_which_key_groups, 100)
 
 -- Cheatsheet keymap
 vim.keymap.set("n", "<leader>?k", ":KeymapCheatsheet<cr>", { desc = "Help: Keymap Cheatsheet" })
@@ -40,34 +37,60 @@ vim.keymap.set("n", "<leader>cpv", ":VenvSelect<cr>", { desc = "Python: Select v
 vim.keymap.set("n", "<leader>cpV", ":VenvSelectCached<cr>", { desc = "Python: Select cached venv" })
 vim.keymap.set("n", "<leader>cpf", function()
   local ok, conform = pcall(require, "conform")
-  if ok then conform.format({ async = false, lsp_fallback = true }) else vim.notify("conform.nvim not available", vim.log.levels.WARN) end
+  if ok then
+    conform.format({ async = false, lsp_fallback = true })
+  else
+    vim.notify("conform.nvim not available", vim.log.levels.WARN)
+  end
 end, { desc = "Python: Format file" })
 
 -- YAML
 vim.keymap.set("n", "<leader>cyf", function()
   local ok, conform = pcall(require, "conform")
-  if ok then conform.format({ async = false, lsp_fallback = true }) else vim.notify("conform.nvim not available", vim.log.levels.WARN) end
+  if ok then
+    conform.format({ async = false, lsp_fallback = true })
+  else
+    vim.notify("conform.nvim not available", vim.log.levels.WARN)
+  end
 end, { desc = "YAML: Format file" })
 vim.keymap.set("n", "<leader>cyr", ":LspRestart<cr>", { desc = "YAML: Restart LSP" })
 
 -- Terraform
 vim.keymap.set("n", "<leader>ctf", function()
   local ok, conform = pcall(require, "conform")
-  if ok then conform.format({ async = false, lsp_fallback = true }) else vim.notify("conform.nvim not available", vim.log.levels.WARN) end
+  if ok then
+    conform.format({ async = false, lsp_fallback = true })
+  else
+    vim.notify("conform.nvim not available", vim.log.levels.WARN)
+  end
 end, { desc = "Terraform: Format file" })
 vim.keymap.set("n", "<leader>ctr", function()
   local ok, telescope = pcall(require, "telescope")
-  if not ok then vim.notify("telescope.nvim not available", vim.log.levels.WARN); return end
+  if not ok then
+    vim.notify("telescope.nvim not available", vim.log.levels.WARN)
+    return
+  end
   pcall(telescope.load_extension, "terraform_doc")
   local ext = telescope.extensions and telescope.extensions.terraform_doc
-  if ext and ext.resources then ext.resources({}) else vim.cmd([[Telescope terraform_doc resources]]) end
+  if ext and ext.resources then
+    ext.resources({})
+  else
+    vim.cmd([[Telescope terraform_doc resources]])
+  end
 end, { desc = "Terraform: Docs (resources)" })
 vim.keymap.set("n", "<leader>ctp", function()
   local ok, telescope = pcall(require, "telescope")
-  if not ok then vim.notify("telescope.nvim not available", vim.log.levels.WARN); return end
+  if not ok then
+    vim.notify("telescope.nvim not available", vim.log.levels.WARN)
+    return
+  end
   pcall(telescope.load_extension, "terraform_doc")
   local ext = telescope.extensions and telescope.extensions.terraform_doc
-  if ext and ext.providers then ext.providers({}) else vim.cmd([[Telescope terraform_doc providers]]) end
+  if ext and ext.providers then
+    ext.providers({})
+  else
+    vim.cmd([[Telescope terraform_doc providers]])
+  end
 end, { desc = "Terraform: Docs (providers)" })
 
 -- Docker

@@ -1,10 +1,17 @@
 return {
-  "epwalsh/obsidian.nvim",
+  "obsidian-nvim/obsidian.nvim",
   version = "*", -- recommended, use latest release instead of latest commit
   lazy = true,
   ft = "markdown",
   keys = {
-    { "<leader>nn", function() require("obsidian").util.toggle_checkbox() end, desc = "Notes: Toggle checkbox", mode = "n" },
+    {
+      "<leader>nn",
+      function()
+        require("obsidian").util.toggle_checkbox()
+      end,
+      desc = "Notes: Toggle checkbox",
+      mode = "n",
+    },
     { "<leader>no", ":ObsidianOpen<cr>", desc = "Notes: Open in Obsidian", mode = "n" },
     { "<leader>ns", ":ObsidianSearch<cr>", desc = "Notes: Search", mode = "n" },
     { "<leader>nt", ":ObsidianTags<cr>", desc = "Notes: Tags", mode = "n" },
@@ -25,7 +32,12 @@ return {
     "nvim-treesitter/nvim-treesitter",
     "epwalsh/pomo.nvim",
   },
+  ---@module 'obsidian'
+  ---@type obsidian.config
   opts = {
+    ui = {
+      enable = false,
+    },
     workspaces = {
       {
         name = "red",

@@ -9,7 +9,6 @@ return {
       bashls = {},
       helm_ls = {},
       marksman = {},
-      terraformls = {},
       yamlls = {
         settings = {
           yaml = {
