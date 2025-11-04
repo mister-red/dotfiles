@@ -6,7 +6,8 @@ local mux = wezterm.mux
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-config.default_prog = { "/bin/zsh", "-l" }
+-- config.default_prog = { "/bin/zsh", "-l" }
+config.default_prog = { "/opt/homebrew/bin/fish" }
 
 config.hide_tab_bar_if_only_one_tab = true
 
@@ -26,10 +27,12 @@ config.keys = {
 }
 
 -- Font Configuration
-config.font_size = 18.0
+config.font_size = 12.0
 
 -- For example, changing the color scheme:
-config.color_scheme = "Aura (Gogh)"
+-- config.color_scheme = "Aura (Gogh)"
+-- config.color_scheme = "Tokyo Night"
+config.color_scheme = "Kanagawa (Gogh)"
 
 -- Disable Wayland cause borked
 config.enable_wayland = false

@@ -35,15 +35,24 @@ brew 'thefuck'
 brew 'yamllint'
 brew 'opentofu'
 brew 'terraform'
+brew 'terragrunt'
 brew 'glab'
 brew 'yq'
 brew 'tree'
 brew 'nmap'
+brew 'curl'
+brew 'graphviz'
+brew 'pre-commit'
+
+# Brews -> k8s
+brew 'kubernetes-cli'
+brew 'k9s'
 
 # Brews -> shell
 brew 'zsh'
 brew 'starship'
 brew 'fzf'
+brew 'fish'
 
 # Brews -> Neovim
 brew 'neovim'
@@ -65,6 +74,9 @@ brew 'mkdocs'
 brew 'imagemagick'
 brew 'ghostscript'
 brew 'tectonic'
+brew 'pngpaste'
+brew 'tree-sitter'
+brew 'prettier'
 
 # Mermaid CLI for Snacks image diagrams
 brew 'node'
@@ -73,10 +85,11 @@ brew 'node'
 brew 'python3'
 brew 'pipx'
 brew 'pyright'
+brew 'pyenv'
 
 # Casks
 cask 'slack'
-cask 'syncthing'
+cask 'syncthing-app'
 cask 'enpass'
 cask 'obsidian'
 cask 'vivaldi'
@@ -95,7 +108,9 @@ cask 'session-manager-plugin'     # AWS CLI session manager plugin
 cask 'th-ch/youtube-music/youtube-music' # Youtube Music
 cask 'cursor'                     # cursor AI IDE
 cask 'cursor-cli'
-cask 'wireshark'
+cask 'wireshark-app'
 cask 'darktable'
 cask 'devpod'                     # https://devpod.sh
 cask 'wezterm'                    # terminal emulator
+cask 'powershell'
+cask 'bruno'                      # Postman alternative
