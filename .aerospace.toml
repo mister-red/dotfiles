@@ -24,7 +24,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 0
+accordion-padding = 10
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -70,16 +70,15 @@ inner.horizontal = 10
 inner.vertical = 10
 outer.left = 10
 outer.bottom = 10
-outer.top = 20
+outer.top = 50
 outer.right = 10
 
 [workspace-to-monitor-force-assignment]
 1 = ['main', 'secondary']
-2 = ['secondary', 'main']
+2 = ['main', 'secondary']
 3 = ['secondary', 'main']
 4 = ['secondary', 'main']
 5 = ['secondary', 'main']
-6 = ['secondary', 'main']
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
@@ -115,10 +114,10 @@ alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+alt-h = 'focus left --boundaries workspace --boundaries-action wrap-around-the-workspace'
+alt-j = 'focus down --boundaries workspace --boundaries-action wrap-around-the-workspace'
+alt-k = 'focus up --boundaries workspace --boundaries-action wrap-around-the-workspace'
+alt-l = 'focus right --boundaries workspace --boundaries-action wrap-around-the-workspace'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 alt-shift-h = 'move left'
@@ -139,7 +138,6 @@ alt-2 = 'workspace 2'                                   # calendar / email writi
 alt-3 = 'workspace 3'                                   # browser
 alt-4 = 'workspace 4'                                   # terminal
 alt-5 = 'workspace 5'                                   # misc apps
-
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
