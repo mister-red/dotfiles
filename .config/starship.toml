@@ -15,7 +15,7 @@ $line_break\
 $character\
 """
 
-command_timeout = 100
+command_timeout = 1000
 add_newline = false
 
 [profiles]
