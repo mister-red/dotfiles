@@ -17,6 +17,8 @@ tap "hashicorp/tap"
 brew "hashicorp/tap/packer"
 
 # Brews
+brew 'postgresql@13'
+brew 'libpq'
 brew 'bash'
 brew 'wget'
 brew 'yadm'
@@ -36,6 +38,8 @@ brew 'yamllint'
 brew 'opentofu'
 brew 'terraform'
 brew 'terragrunt'
+brew 'tflint'
+brew 'terraform-docs'
 brew 'glab'
 brew 'yq'
 brew 'tree'
