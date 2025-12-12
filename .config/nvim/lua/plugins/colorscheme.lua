@@ -6,6 +6,14 @@ return {
     opts = { style = "night" },
   },
   {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme kanagawa]])
+    end,
+  },
+  {
     "baliestri/aura-theme",
     lazy = false,
     priority = 1000,
