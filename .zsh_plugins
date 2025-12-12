@@ -55,7 +55,7 @@ repos=(
   zsh-users/zsh-syntax-highlighting
   zsh-users/zsh-history-substring-search
   olets/git-prompt-kit
-  olets/zsh-transient-prompt
+  #olets/zsh-transient-prompt
   #MichaelAquilina/zsh-you-should-use
   #wfxr/forgit
 )
@@ -70,7 +70,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
-  zsh-transient-prompt
+  #zsh-transient-prompt
   git-prompt-kit
 )
 

@@ -1,3 +1,8 @@
 alias cd='z'
 alias bbg='brew bundle --global'
 alias docker='podman'
+alias assume=". assume"
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
