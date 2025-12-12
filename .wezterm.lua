@@ -21,9 +21,15 @@ config.front_end = "WebGpu"
 config.max_fps = 120
 config.webgpu_power_preference = "HighPerformance"
 
--- Key Mappings
+-- Key Mappings - disable all default, need to explicitly set each hotkey
+config.disable_default_key_bindings = true
+
 config.keys = {
+	-- CTRL-SHIFT-l activates the debug overlay
+	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
+
 	{ key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
+	{ key = "P", mods = "CTRL", action = wezterm.action.ActivateCommandPalette },
 }
 
 -- Font Configuration
