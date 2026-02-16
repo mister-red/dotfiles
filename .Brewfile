@@ -50,6 +50,7 @@ brew 'pre-commit'
 brew 'commitizen'
 brew 'commitlint'
 brew 'gitlint'
+brew 'gitleaks'
 
 # Brews -> k8s
 brew 'kubernetes-cli'
