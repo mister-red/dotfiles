@@ -47,6 +47,9 @@ brew 'nmap'
 brew 'curl'
 brew 'graphviz'
 brew 'pre-commit'
+brew 'commitizen'
+brew 'commitlint'
+brew 'gitlint'
 
 # Brews -> k8s
 brew 'kubernetes-cli'
@@ -118,3 +121,4 @@ cask 'devpod'                     # https://devpod.sh
 cask 'wezterm'                    # terminal emulator
 cask 'powershell'
 cask 'bruno'                      # Postman alternative
+cask 'betterdisplay'              # Display Enhancer for Mac
