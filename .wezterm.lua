@@ -24,12 +24,16 @@ config.webgpu_power_preference = "HighPerformance"
 -- Key Mappings - disable all default, need to explicitly set each hotkey
 config.disable_default_key_bindings = true
 
+local act = wezterm.action
 config.keys = {
 	-- CTRL-SHIFT-l activates the debug overlay
 	{ key = "L", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 
-	{ key = "l", mods = "ALT", action = wezterm.action.ShowLauncher },
-	{ key = "P", mods = "CTRL", action = wezterm.action.ActivateCommandPalette },
+	{ key = "l", mods = "ALT", action = act.ShowLauncher },
+	{ key = "P", mods = "CTRL", action = act.ActivateCommandPalette },
+	{ key = "=", mods = "CTRL", action = act.IncreaseFontSize },
+	{ key = "-", mods = "CTRL", action = act.DecreaseFontSize },
+	{ key = "t", mods = "SHIFT|ALT", action = act.SpawnTab("DefaultDomain") },
 }
 
 -- Font Configuration
