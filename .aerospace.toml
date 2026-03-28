@@ -75,7 +75,7 @@ outer.right = 10
 
 [workspace-to-monitor-force-assignment]
 1 = ['main', 'secondary']
-2 = ['main', 'secondary']
+2 = ['secondary', 'main']
 3 = ['secondary', 'main']
 4 = ['secondary', 'main']
 5 = ['secondary', 'main']

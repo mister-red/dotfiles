@@ -12,6 +12,9 @@ if type -q brew
 
     # Prepend curl from Homebrew (mirrors: export PATH="$(brew --prefix)/opt/curl/bin:$PATH")
     fish_add_path $brew_prefix/opt/curl/bin
+
+    # Add obsidian
+    fish_add_path /Applications/Obsidian.app/Contents/MacOS
 end
 
 # ----- Starship prompt -----
@@ -41,4 +44,5 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias devpu='devpod up --recreate --provider podman-docker --ide vscode .'
+alias devpuv='devpod up --recreate --provider podman-docker --ide vscode .'
+alias devpu='devpod up --recreate --provider podman-docker --ide nvim .'

@@ -23,6 +23,7 @@ brew 'bash'
 brew 'wget'
 brew 'yadm'
 brew 'git'
+brew 'git-lfs'
 brew 'podman'
 brew 'podman-compose'
 brew 'clipboard'
@@ -51,16 +52,17 @@ brew 'commitizen'
 brew 'commitlint'
 brew 'gitlint'
 brew 'gitleaks'
+brew 'fabric-ai' # ai prompt cli tool: https://github.com/danielmiessler/Fabric
 
 # Brews -> k8s
 brew 'kubernetes-cli'
 brew 'k9s'
 
 # Brews -> shell
-brew 'zsh'
 brew 'starship'
 brew 'fzf'
 brew 'fish'
+brew 'tmux'
 
 # Brews -> Neovim
 brew 'neovim'
