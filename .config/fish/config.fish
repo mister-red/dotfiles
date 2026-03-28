@@ -2,19 +2,23 @@
 # Commands to run in interactive sessions can go here
 #end
 
-# ----- Homebrew paths (macOS: Apple Silicon & Intel) -----
-# Prefer using brew --prefix if brew is installed.
-if type -q brew
-    set -l brew_prefix (brew --prefix)
-
-    # Ensure Homebrew's bin is on PATH (covers /opt/homebrew and /usr/local)
-    fish_add_path $brew_prefix/bin
-
-    # Prepend curl from Homebrew (mirrors: export PATH="$(brew --prefix)/opt/curl/bin:$PATH")
-    fish_add_path $brew_prefix/opt/curl/bin
-
-    # Add obsidian
-    fish_add_path /Applications/Obsidian.app/Contents/MacOS
+switch (uname -a)
+    case "*Linux cachyos*"
+        echo "We're on Cachy"
+        source /usr/share/cachyos-fish-config/cachyos-config.fish
+    case "*Darwin*"
+        echo "We're on MacOS"
+        # ----- Homebrew paths (macOS: Apple Silicon & Intel) -----
+        # Prefer using brew --prefix if brew is installed.
+        if type -q brew
+            set -l brew_prefix (brew --prefix)
+            # Ensure Homebrew's bin is on PATH (covers /opt/homebrew and /usr/local)
+            fish_add_path $brew_prefix/bin
+            # Prepend curl from Homebrew (mirrors: export PATH="$(brew --prefix)/opt/curl/bin:$PATH")
+            fish_add_path $brew_prefix/opt/curl/bin
+            # Add obsidian
+            fish_add_path /Applications/Obsidian.app/Contents/MacOS
+        end
 end
 
 # ----- Starship prompt -----
@@ -46,3 +50,9 @@ alias la='ls -A'
 alias l='ls -CF'
 alias devpuv='devpod up --recreate --provider podman-docker --ide vscode .'
 alias devpu='devpod up --recreate --provider podman-docker --ide nvim .'
+
+# overwrite greeting
+# potentially disabling fastfetch
+#function fish_greeting
+#    # smth smth
+#end
