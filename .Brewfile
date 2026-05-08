@@ -16,7 +16,13 @@ brew 'granted'
 tap "hashicorp/tap"
 brew "hashicorp/tap/packer"
 
+# pike - IAM Policy Analyzer
+tap "jameswoolfenden/homebrew-tap"
+brew "jameswoolfenden/tap/pike"
+
 # Brews
+brew 'htop'
+brew 'pass'
 brew 'postgresql@13'
 brew 'libpq'
 brew 'bash'
@@ -53,6 +59,8 @@ brew 'commitlint'
 brew 'gitlint'
 brew 'gitleaks'
 brew 'fabric-ai' # ai prompt cli tool: https://github.com/danielmiessler/Fabric
+brew 'llmfit' # local llm model picker
+brew 'llama.cpp'
 
 # Brews -> k8s
 brew 'kubernetes-cli'
@@ -86,7 +94,9 @@ brew 'ghostscript'
 brew 'tectonic'
 brew 'pngpaste'
 brew 'tree-sitter'
+brew 'tree-sitter-cli'
 brew 'prettier'
+brew 'zk'
 
 # Mermaid CLI for Snacks image diagrams
 brew 'node'
@@ -125,3 +135,4 @@ cask 'wezterm'                    # terminal emulator
 cask 'powershell'
 cask 'bruno'                      # Postman alternative
 cask 'betterdisplay'              # Display Enhancer for Mac
+cask 'claude-code'
