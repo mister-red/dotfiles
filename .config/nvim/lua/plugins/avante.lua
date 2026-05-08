@@ -7,12 +7,20 @@ return {
     provider = "bedrock",
     providers = {
       bedrock = {
-        model = "global.anthropic.claude-sonnet-4-20250514-v1:0",
-        aws_profile = "legacy-affera-train",
+        model = "global.anthropic.claude-opus-4-6-v1[1m]",
         aws_region = "us-east-1",
       },
+      openai = {
+        endpoint = "http://127.0.0.1:8080/v1",
+        model = "Qwen2.5-7B-Instruct.Q4_K_M.gguf", -- your desired model (or use gpt-4o, etc.)
+        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+        extra_request_body = {
+          temperature = 0,
+          max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+          reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+        },
+      },
     },
-    -- provider = "claude",
     -- add any opts here
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
@@ -28,7 +36,7 @@ return {
     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
     "ibhagwan/fzf-lua", -- for file_selector provider fzf
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-    "zbirenbaum/copilot.lua", -- for providers='copilot'
+    -- "zbirenbaum/copilot.lua", -- for providers='copilot'
     {
       -- support for image pasting
       "HakonHarnes/img-clip.nvim",

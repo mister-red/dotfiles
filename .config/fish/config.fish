@@ -19,7 +19,19 @@ switch (uname -a)
             # Add obsidian
             fish_add_path /Applications/Obsidian.app/Contents/MacOS
         end
+
+        set -gx AWS_BEARER_TOKEN_BEDROCK (pass mdt_bedrock_api)
+        set -gx CLAUDE_CODE_USE_BEDROCK 1
+        set -gx AWS_REGION us-east-1
+        set -gx ANTHROPIC_MODEL global.anthropic.claude-opus-4-6-v1[1m]
+        set -gx ANTHROPIC_DEFAULT_OPUS_MODEL global.anthropic.claude-opus-4-6-v1[1m]
+        set -gx ANTHROPIC_DEFAULT_SONNET_MODEL global.anthropic.claude-sonnet-4-6-v1[1m]
+        set -gx ANTHROPIC_SMALL_FAST_MODEL global.anthropic.claude-haiku-4-5-20251001-v1:0
+        set -gx DISABLE_TELEMETRY 1
+        set -gx DISABLE_ERROR_REPORTING 1
 end
+
+# ---- MacOS Environment Variables -----
 
 # ----- Starship prompt -----
 # Config file location (equivalent to STARSHIP_CONFIG=${HOME}/.config/starship.toml)
@@ -56,3 +68,6 @@ alias devpu='devpod up --recreate --provider podman-docker --ide nvim .'
 #function fish_greeting
 #    # smth smth
 #end
+alias fabric='fabric-ai'
+alias devpuv='devpod up --recreate --provider podman-docker --ide vscode .'
+alias devpu='devpod up --recreate --provider podman-docker --ide nvim .'

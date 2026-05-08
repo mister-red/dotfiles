@@ -17,7 +17,7 @@ config.default_prog = { "/opt/homebrew/bin/fish" }
 config.hide_tab_bar_if_only_one_tab = true
 
 -- This is where you actually apply your config choices
-config.window_background_opacity = 0.8
+config.window_background_opacity = 1
 
 config.window_decorations = "RESIZE"
 
@@ -114,6 +114,12 @@ config.keys = {
 	{ key = "P", mods = "CTRL", action = act.ActivateCommandPalette },
 	{ key = "=", mods = "CTRL", action = act.IncreaseFontSize },
 	{ key = "-", mods = "CTRL", action = act.DecreaseFontSize },
+	-- Support for auto switcher to notes tab via script located in ~/.local/bin/open-todays_note_wezterm.sh (Mac + Aerospace only!)
+	{
+		key = "1",
+		mods = "CMD|CTRL",
+		action = act.SwitchToWorkspace({ name = "main" }),
+	},
 }
 
 config.key_tables = {
