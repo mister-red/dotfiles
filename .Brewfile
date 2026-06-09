@@ -61,6 +61,7 @@ brew 'gitleaks'
 brew 'fabric-ai' # ai prompt cli tool: https://github.com/danielmiessler/Fabric
 brew 'llmfit' # local llm model picker
 brew 'llama.cpp'
+brew 'anomalyco/tap/opencode' # Opencode CLI
 
 # Brews -> k8s
 brew 'kubernetes-cli'
@@ -97,6 +98,7 @@ brew 'tree-sitter'
 brew 'tree-sitter-cli'
 brew 'prettier'
 brew 'zk'
+brew 'jstkdng/programs/ueberzugpp'
 
 # Mermaid CLI for Snacks image diagrams
 brew 'node'
@@ -125,7 +127,6 @@ cask 'postman'                    # API Tool
 cask 'raycast'                    # Extendable Launcher
 cask 'drawio'                     # Diagramming tool
 cask 'session-manager-plugin'     # AWS CLI session manager plugin
-cask 'th-ch/youtube-music/youtube-music' # Youtube Music
 cask 'cursor'                     # cursor AI IDE
 cask 'cursor-cli'
 cask 'wireshark-app'
@@ -135,4 +136,4 @@ cask 'wezterm'                    # terminal emulator
 cask 'powershell'
 cask 'bruno'                      # Postman alternative
 cask 'betterdisplay'              # Display Enhancer for Mac
-cask 'claude-code'
+cask 'yt-music'

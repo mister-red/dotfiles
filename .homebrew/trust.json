@@ -1,0 +1,9 @@
+{
+  "trustedtaps": [
+    "anomalyco/tap",
+    "felixkratz/formulae",
+    "hashicorp/tap",
+    "nikitabobko/tap"
+  ],
+  "trustedformulae": ["jameswoolfenden/tap/pike", "jstkdng/programs/ueberzugpp"]
+}
