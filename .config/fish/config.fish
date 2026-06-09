@@ -60,6 +60,11 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# devpod aliases
+function devpod --wraps devpod
+    SHELL=/bin/bash command devpod $argv
+end
 alias devpuv='devpod up --recreate --provider podman-docker --ide vscode .'
 alias devpu='devpod up --recreate --provider podman-docker --ide nvim .'
 
@@ -69,5 +74,3 @@ alias devpu='devpod up --recreate --provider podman-docker --ide nvim .'
 #    # smth smth
 #end
 alias fabric='fabric-ai'
-alias devpuv='devpod up --recreate --provider podman-docker --ide vscode .'
-alias devpu='devpod up --recreate --provider podman-docker --ide nvim .'
